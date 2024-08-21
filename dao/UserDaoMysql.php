@@ -1,4 +1,11 @@
 <?php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2e3c1cf57a483fac35ac88130822420755cd8c46
+>>>>>>> 9465deb1214930d5850a22590b05ba2c4ad3d811
 // essa classe (UserDaoMysql) é como uma "ponte" entre o seu código PHP e o banco de dados.
 
 /*Aqui, você está dizendo ao PHP:
@@ -63,6 +70,10 @@ lidando com usuários.
 generateUser: Monta um objeto User a partir de um conjunto de dados.
 findByToken: Procura um usuário no banco de dados usando um token.
 */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9465deb1214930d5850a22590b05ba2c4ad3d811
   public function findByEmail($email)
   {
     if (!empty($email)) {
@@ -109,3 +120,23 @@ findByToken: Procura um usuário no banco de dados usando um token.
     return true;
   }
 }
+<<<<<<< HEAD
+=======
+=======
+}
+=======
+  require_once'models/User.php';
+  class UserDaoMysql implements UserDAO {
+    private $pdo;
+
+    public function __construct(PDO $driver) {
+
+      $this->pdo = $driver;
+    }
+    public function findByToken($token) {
+      
+    }
+  }
+>>>>>>> fe9d64ea4caca22afade9dd9ca9b69eab65f95ac
+>>>>>>> 2e3c1cf57a483fac35ac88130822420755cd8c46
+>>>>>>> 9465deb1214930d5850a22590b05ba2c4ad3d811
