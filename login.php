@@ -20,6 +20,7 @@ require 'config.php';
   </header>
   <section class="container main">
     <form method="POST" action="<?= $base; ?>/login_action.php">
+<<<<<<< HEAD
 
       <?php if (!empty($_SESSION['flash'])) : ?>
         <?= $_SESSION['flash']; ?>
@@ -27,6 +28,8 @@ require 'config.php';
       <?php endif; ?>
 
 
+=======
+>>>>>>> 2e3c1cf57a483fac35ac88130822420755cd8c46
       <input placeholder=" Digite seu e-mail" class="input" type="email" name="email" />
 
       <input placeholder="Digite sua senha" class="input" type="password" name="password" />
