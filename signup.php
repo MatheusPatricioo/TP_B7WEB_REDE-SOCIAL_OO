@@ -26,27 +26,48 @@ require 'config.php';
         <?php $_SESSION['flash'] = ''; ?>
       <?php endif; ?>
 
+<<<<<<< HEAD
       <input placeholder="Digite seu nome" class="input" type="text" name="name" />
 
       <input id="birthdate" placeholder="Digite sua data de nascimento" class="input" type="text" name="birthdate" />
 
       <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
+=======
+
+      <input placeholder=" Digite seu nome" class="input" type="text" name="name" />
+
+      <input placeholder=" Digite sua data de nascimento" class="input" type="text" name="birthdate" />
+
+      <input placeholder=" Digite seu e-mail" class="input" type="email" name="email" />
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
 
       <input placeholder="Digite sua senha" class="input" type="password" name="password" />
 
       <input class="button" type="submit" value="Fazer cadastro" />
 
+<<<<<<< HEAD
       <a href="<?= $base; ?>/login.php">Já possui uma conta? Faça o login</a>
+=======
+      <a href="<?= $base; ?>/login.php">Ja possui uma conta? faça o login</a>
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
     </form>
   </section>
 
   <script src="https://unpkg.com/imask"></script>
   <script>
+<<<<<<< HEAD
     IMask(
       document.getElementById("birthdate"), {
         mask: '00/00/0000'
       }
     ); 
+=======
+    Imask(
+      document.getElementById("birthdate"), {
+        mask: '00/00/0000'
+      }
+    );
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
   </script>
 </body>
 

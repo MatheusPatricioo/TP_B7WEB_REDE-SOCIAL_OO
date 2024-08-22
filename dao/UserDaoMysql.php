@@ -1,4 +1,14 @@
 <?php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2e3c1cf57a483fac35ac88130822420755cd8c46
+>>>>>>> 9465deb1214930d5850a22590b05ba2c4ad3d811
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
 // essa classe (UserDaoMysql) é como uma "ponte" entre o seu código PHP e o banco de dados.
 
 /*Aqui, você está dizendo ao PHP:
@@ -63,6 +73,13 @@ lidando com usuários.
 generateUser: Monta um objeto User a partir de um conjunto de dados.
 findByToken: Procura um usuário no banco de dados usando um token.
 */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9465deb1214930d5850a22590b05ba2c4ad3d811
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
   public function findByEmail($email)
   {
     if (!empty($email)) {
@@ -83,15 +100,23 @@ findByToken: Procura um usuário no banco de dados usando um token.
   public function update(User $u)
   {
     $sql = $this->pdo->prepare("UPDATE users SET
+<<<<<<< HEAD
           email = :email,
           password = :password,
           name = :name,
           birthdate = :birthdate,
+=======
+          email =:email,
+          password = :password,
+          name =:name,
+          birthdate =: birdthdate,
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
           city = :city,
           work = :work,
           avatar = :avatar,
           cover = :cover,
           token = :token
+<<<<<<< HEAD
           WHERE id = :id");
 
     $sql->bindValue(':email', $u->email);
@@ -117,8 +142,45 @@ findByToken: Procura um usuário no banco de dados usando um token.
     $sql->bindValue(':name', $u->name);
     $sql->bindValue('birthdate', $u->birthdate);
     $sql->bindValue('token', $u->token);
+=======
+          WHERE id = id");
+
+    $sql->bindValue(':email', $u->email);
+    $sql->bindValue(':password', $u->password);
+    $sql->bindValue(':name', $u->email);
+    $sql->bindValue('birthdate', $u->birthdate);
+    $sql->bindValue('city', $u->city);
+    $sql->bindValue('work', $u->work);
+    $sql->bindValue('avatar', $u->avatar);
+    $sql->bindValue('cover', $u->cover);
+    $sql->bindValue('token', $u->token);
+    $sql->bindValue('id', $u->id);
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
     $sql->execute();
 
     return true;
   }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+}
+=======
+  require_once'models/User.php';
+  class UserDaoMysql implements UserDAO {
+    private $pdo;
+
+    public function __construct(PDO $driver) {
+
+      $this->pdo = $driver;
+    }
+    public function findByToken($token) {
+      
+    }
+  }
+>>>>>>> fe9d64ea4caca22afade9dd9ca9b69eab65f95ac
+>>>>>>> 2e3c1cf57a483fac35ac88130822420755cd8c46
+>>>>>>> 9465deb1214930d5850a22590b05ba2c4ad3d811
+>>>>>>> 332ca422bd32026b8f591976c917566ee339a172
