@@ -11,6 +11,7 @@ class Auth
 
     private $pdo;
     private $base;
+    private $dao;
 
     //passei PDO $pdo, pra deixar claro que to especificando
     //que o parametro pdo é um objeto do tipo PDO
@@ -19,6 +20,7 @@ class Auth
     {
         $this->pdo = $pdo;
         $this->base = $base;
+        $this->dao = new UserDaoMysql($this->pdo);
     }
 
     //Verificar se alguém tem permissão para entrar (checkToken)
@@ -27,9 +29,7 @@ class Auth
 
         if (!empty($_SESSION['token'])) {
             $token = $_SESSION['token'];
-
-            $userDao = new UserDaoMysql($this->pdo);
-            $user = $userDao->findByToken($token);
+            $user = $this->dao->findByToken($token);
             if ($user) {
                 return true;
             }
@@ -42,9 +42,9 @@ class Auth
     //Verificar se alguém está tentando entrar usando a senha correta:
     public function validateLogin($email, $password)
     {
-        $userDao = new UserDaoMysql($this->pdo);
 
-        $user = $userDao->findByEmail($email);
+
+        $user = $this->dao->findByEmail($email);
 
         if ($user) {
 
@@ -53,7 +53,7 @@ class Auth
 
                 $_SESSION['token'] = $token;
                 $user->token = $token;
-                $userDao->update($user);
+                $this->dao->update($user);
 
                 return true;
             }
@@ -64,10 +64,9 @@ class Auth
 
     //verifica se o email existe;
     public function emailExists($email)
-    {
-        $userDao = new UserDaoMysql($this->pdo);
+    {;
         //$sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
-        return $userDao->findByEmail($email) ? true : false;
+        return $this->dao->findByEmail($email) ? true : false;
     }
 
 
@@ -75,7 +74,7 @@ class Auth
     //registra o usuario 
     public function registerUser($name, $email, $password, $birthdate)
     {
-        $userDao = new UserDaoMysql($this->pdo);
+
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $token = md5(time() . rand(0, 9999));
@@ -87,7 +86,7 @@ class Auth
         $newUser->birthdate = $birthdate;
         $newUser->token = $token;
 
-        $userDao->insert($newUser);
+        $this->dao->insert($newUser);
 
         $_SESSION['token'] = $token;
     }
