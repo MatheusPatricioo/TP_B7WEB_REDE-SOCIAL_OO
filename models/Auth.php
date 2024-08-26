@@ -26,12 +26,14 @@ class Auth
     //Verificar se alguém tem permissão para entrar (checkToken)
     public function checkToken()
     {
-
         if (!empty($_SESSION['token'])) {
             $token = $_SESSION['token'];
+
+
             $user = $this->dao->findByToken($token);
+
             if ($user) {
-                return true;
+                return $user;  // Retornando o objeto do usuário
             }
         }
 
