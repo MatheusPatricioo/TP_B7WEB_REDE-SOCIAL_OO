@@ -13,6 +13,8 @@ require 'partials/header.php';
 require 'partials/menu.php';
 ?>
 <section class="feed mt-10">
+
+  <?= print_r($userInfo); ?>
   <div class="row">
     <div class="column pr-5">
 
@@ -21,7 +23,7 @@ require 'partials/menu.php';
 
 
 
-    </div> 
+    </div>
     <div class="column side pl-5">
       <div class="box banners">
         <div class="box-header">

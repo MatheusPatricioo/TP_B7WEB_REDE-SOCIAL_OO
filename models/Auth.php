@@ -88,7 +88,9 @@ class Auth
         $newUser->password = $hash;
         $newUser->birthdate = $birthdate;
         $newUser->token = $token;
-        
+
+        $newUser->avatar = 'default.png';
+
 
         $this->dao->insert($newUser);
 
