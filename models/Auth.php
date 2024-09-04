@@ -1,5 +1,6 @@
 <?php
 require_once 'dao/UserDaoMysql.php';
+
 //vou usar para autenticar os logins 
 
 /* a class Auth é como o "guarda/policial" da aplicação;
@@ -66,7 +67,7 @@ class Auth
 
     //verifica se o email existe;
     public function emailExists($email)
-    {;
+    {
         //$sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
         return $this->dao->findByEmail($email) ? true : false;
     }
@@ -87,6 +88,7 @@ class Auth
         $newUser->password = $hash;
         $newUser->birthdate = $birthdate;
         $newUser->token = $token;
+        
 
         $this->dao->insert($newUser);
 

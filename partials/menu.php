@@ -1,7 +1,7 @@
         <aside class="mt-10">
           <nav>
             <a href="<?= $base; ?>">
-              <div class="menu-item active <?= $activeMenu == 'home' ? 'active' : ''; ?>">
+              <div class="menu-item <?= $activeMenu == 'home' ? 'active' : ''; ?>">
                 <div class="menu-item-icon">
                   <img src="<?= $base; ?>/assets/images/home-run.png" width="16" height="16" />
                 </div>
@@ -23,7 +23,7 @@
             <a href="<?= $base; ?>/amigos.php">
               <div class="menu-item <?= $activeMenu == 'friends' ? 'active' : ''; ?>">
                 <div class="menu-item-icon">
-                  <img src="assets/images/friends.png" width="16" height="16" />
+                  <img src="<?= $base; ?>assets/images/friends.png" width="16" height="16" />
                 </div>
                 <div class="menu-item-text">
                   Amigos
