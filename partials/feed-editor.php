@@ -9,7 +9,8 @@ $firstName = current(explode(' ', $userInfo->name));
       <div class="feed-new-avatar">
         <img src=" <?= $base; ?>/media/avatars/<?= $userInfo->avatar; ?>" />
       </div>
-      <div class="feed-new-input-placeholder">O que você está pensando, <?= $firstName; ?>?</div>
+      <div class="feed-new-input-placeholder">O que você está pensando, <?= $firstName; ?>?
+      </div>
       <div class="feed-new-input" contenteditable="true"></div>
       <div class="feed-new-send">
         <img src=" <?= $base; ?>/assets/images/send.png" />

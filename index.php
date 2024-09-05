@@ -1,27 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
 <?php
 require 'config.php';
 require 'models/Auth.php';
+
+
 
 //tudo oq verifica banco de dados eu tenho que passar o PDO
 //passei o pdo e a base, pq se n achar, ele manda pra base.
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 
-$activeMenu = 'home'; // agr qnd ta na page home, msm sem passar o mouse por cima, ele acende com um destaque
+$activeMenu = 'home'; // agr qnd ta na page home, msm sem passar o mouse por cima, ele acende com um destaque.
 
 require 'partials/header.php';
 require 'partials/menu.php';
 ?>
 <section class="feed mt-10">
 
-  <?= print_r($userInfo); ?>
+
   <div class="row">
     <div class="column pr-5">
 
       <?php require 'partials/feed-editor.php' ?>
-
-
-
 
     </div>
     <div class="column side pl-5">
@@ -42,9 +51,8 @@ require 'partials/menu.php';
           Criado com ❤️ por Patricio.ltda
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
 
 </section>
 <?php

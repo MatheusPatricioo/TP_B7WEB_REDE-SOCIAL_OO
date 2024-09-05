@@ -158,6 +158,8 @@ header .head-side {
 
 .main .feed {
     flex:1;
+    display: flex;
+    
 }
 
 .feed .box {
@@ -165,6 +167,9 @@ header .head-side {
     border:1px solid #c9cacc;
     border-radius:5px;
     margin-bottom:10px;
+    
+  
+    
 }
 .box .box-header {
     padding:10px;
@@ -174,6 +179,7 @@ header .head-side {
 }
 .box .box-header-text {
     flex:1;
+    
 }
 .box .box-header-text span {
     color:#999;
@@ -185,6 +191,8 @@ header .head-side {
 }
 .box .box-body img {
     max-width:100%;
+    
+    
 }
 
 .feed .border-top-flat {
@@ -195,6 +203,7 @@ header .head-side {
 
 .feed .row {
     display:flex;
+    flex:1;
 }
 .feed .column {
     display:flex;
@@ -210,6 +219,7 @@ header .head-side {
 
 .feed-new-editor {
     align-items: center;
+    
 }
 .feed-new-avatar {
     margin-right:10px;
