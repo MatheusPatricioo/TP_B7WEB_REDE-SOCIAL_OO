@@ -14,9 +14,10 @@ class User
     public $cover;
     public $token;
 }
-interface UserDao
+interface UserDAO //tava "Dao", mudei pra DAO, se der algum erro, é só reverter :)
 {
     public function findByToken($token);
     public function findByEmail($email);
     public function update(User $u);
+    public function insert(User $u);
 }
