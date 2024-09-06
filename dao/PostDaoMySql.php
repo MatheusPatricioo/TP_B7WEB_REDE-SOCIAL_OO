@@ -27,3 +27,4 @@ class PostDaoMysql implements PostDAO
   }
 
 }
+;
