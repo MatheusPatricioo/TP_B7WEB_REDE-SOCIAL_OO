@@ -23,7 +23,7 @@ require 'config.php';
 
       <?php if (!empty($_SESSION['flash'])) : ?>
         <?= $_SESSION['flash']; ?>
-        <?php $_SESSION['flash'] = ''; ?>
+        <?php $_SESSION['flash'] = ''; ?> 
       <?php endif; ?>
 
 

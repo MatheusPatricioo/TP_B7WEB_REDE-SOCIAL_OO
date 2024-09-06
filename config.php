@@ -1,6 +1,6 @@
 <?php
 session_start();
-$base = 'http://localhost/redesocial';
+$base = 'http://localhost/TP_B7WEB_REDE-SOCIAL_OO';
 $db_name = 'devsbook';
 $db_host = 'localhost';
 $db_user = 'root';
